@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Heart, Bookmark, MapPin, Star, Eye, Clock } from 'lucide-react';
+import Image from 'next/image';
 
 export default function DestinationCard({ destination }) {
   const [isLiked, setIsLiked] = useState(destination.isLiked);
@@ -16,11 +17,13 @@ export default function DestinationCard({ destination }) {
       <div className={`relative group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden card-hover ${heightClasses[destination.height]}`}>
         {/* Image */}
         <div className="relative h-full overflow-hidden">
-          <img 
-            src={destination.image} 
-            alt={destination.title}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-          />
+       <Image
+  src={destination.image}
+  alt={destination.title}
+  width={800}   // pick an appropriate width
+  height={600}  // pick an appropriate height
+  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+/>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           
           {/* Top Actions */}

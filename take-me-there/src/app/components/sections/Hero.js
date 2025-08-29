@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Search, Play, ArrowDown } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Hero({ onSearchClick }) {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -50,9 +51,11 @@ export default function Hero({ onSearchClick }) {
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img
+           <Image
               src={image.url}
               alt={image.title}
+              width={800}       
+              height={600}     
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black/40" />
@@ -177,21 +180,29 @@ export default function Hero({ onSearchClick }) {
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20">
           <div className="flex items-center space-x-3">
             <div className="flex -space-x-2">
-              <img
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=40&h=40&fit=crop&crop=face"
-                alt="Traveler"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
-                alt="Traveler"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face"
-                alt="Traveler"
-                className="w-8 h-8 rounded-full border-2 border-white"
-              />
+            <Image
+  src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=40&h=40&fit=crop&crop=face"
+  alt="Traveler"
+  width={40}
+  height={40}
+  className="w-8 h-8 rounded-full border-2 border-white"
+/>
+
+<Image
+  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
+  alt="Traveler"
+  width={40}
+  height={40}
+  className="w-8 h-8 rounded-full border-2 border-white"
+/>
+
+<Image
+  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face"
+  alt="Traveler"
+  width={40}
+  height={40}
+  className="w-8 h-8 rounded-full border-2 border-white"
+/>
             </div>
             <div>
               <div className="text-white text-sm font-medium">2.5K travelers</div>
