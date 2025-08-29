@@ -117,7 +117,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
           {searchQuery && (
             <div className="mt-8 pt-8 border-t border-gray-200">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                Search results for "{searchQuery}"
+                Search results for {searchQuery}
               </h3>
               <div className="text-gray-500">
                 Start typing to see destination suggestions...

@@ -34,7 +34,7 @@ export default function DestinationCard({ destination }) {
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
         {/* Image Container */}
         <div className={`relative ${getCardHeight()} overflow-hidden`}>
-        import Image from "next/image";
+        import Image from next/image;
 
 <Image
   src={destination.image}

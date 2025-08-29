@@ -14,8 +14,8 @@ export default function NotFound() {
         <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">Destination Not Found</h2>
         <p className="text-gray-600 mb-8 leading-relaxed">
-          Oops! It looks like this travel destination doesn't exist on our map. 
-          Let's get you back to exploring amazing places around the world.
+          Oops! It looks like this travel destination doesnt exist on our map. 
+          Let s get you back to exploring amazing places around the world.
         </p>
         
         <div className="space-y-4">
