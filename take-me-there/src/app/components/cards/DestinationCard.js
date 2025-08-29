@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Heart, Bookmark, MapPin, Star, Users, Calendar } from 'lucide-react'
+import Image from 'next/image'
 
 export default function DestinationCard({ destination }) {
   const [isLiked, setIsLiked] = useState(destination.isLiked || false)
@@ -33,11 +34,16 @@ export default function DestinationCard({ destination }) {
       <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
         {/* Image Container */}
         <div className={`relative ${getCardHeight()} overflow-hidden`}>
-          <img
-            src={destination.image}
-            alt={destination.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
+        import Image from "next/image";
+
+<Image
+  src={destination.image}
+  alt={destination.title}
+  width={500} // you can adjust width/height based on your layout
+  height={300}
+  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+/>
+
           
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
