@@ -14,7 +14,7 @@ export default function Hero({ onSearchClick }) {
       subtitle: 'Let\'s discover the world together'
     },
     {
-      url: 'https://images.unsplash.com/photo-1502602898536-47ad22581b52?w=1920&h=1080&fit=crop',
+      url: 'https://plus.unsplash.com/premium_photo-1661962542692-4fe7a4ad6b54?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       title: 'Create Unforgettable Memories',
       subtitle: 'Adventures that last a lifetime'
     },

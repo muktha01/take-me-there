@@ -9,6 +9,7 @@ import Newsletter from '@/app/components/sections/NewsletterSection';
 import Footer from '@/app/components/layout/Footer';
 import SearchOverlay from '@/app/components/ui/SearchOverlay';
 import { destinations } from '@/lib/data/destinations';
+import MapComponent from './components/layout/map';
 
 const categories = [
   { id: 'all', name: 'All Destinations', count: destinations.length },
@@ -76,6 +77,8 @@ export default function Home() {
         />
       </main>
 
+      
+      <MapComponent />
       <Newsletter />
       <Footer />
       
