@@ -1,31 +1,16 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import DestinationCard from '../cards/DestinationCard'
-import { destinations } from '@/lib/data/destinations'
 
-export default function MasonryGrid({ activeCategory }) {
-  const [filteredDestinations, setFilteredDestinations] = useState(destinations)
+export default function MasonryGrid({ 
+  destinations, 
+  likedDestinations, 
+  savedDestinations, 
+  onLike, 
+  onSave 
+}) {
   const [loading, setLoading] = useState(false)
-
-  useEffect(() => {
-    setLoading(true)
-    
-    // Simulate loading delay for smooth transition
-    const timer = setTimeout(() => {
-      if (activeCategory === 'all') {
-        setFilteredDestinations(destinations)
-      } else {
-        const filtered = destinations.filter(dest => 
-          dest.category === activeCategory
-        )
-        setFilteredDestinations(filtered)
-      }
-      setLoading(false)
-    }, 300)
-
-    return () => clearTimeout(timer)
-  }, [activeCategory])
 
   if (loading) {
     return (
@@ -51,31 +36,35 @@ export default function MasonryGrid({ activeCategory }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="masonry-grid">
-        {filteredDestinations.map((destination) => (
+        {destinations.map((destination) => (
           <DestinationCard 
             key={destination.id} 
-            destination={destination} 
+            destination={destination}
+            isLiked={likedDestinations?.has(destination.id)}
+            isSaved={savedDestinations?.has(destination.id)}
+            onLike={onLike}
+            onSave={onSave}
           />
         ))}
       </div>
       
-      {filteredDestinations.length === 0 && (
+      {destinations.length === 0 && (
         <div className="text-center py-16">
-          <div className="text-gray-400 text-6xl mb-4">🌍</div>
+          <div className="text-gray-400 text-6xl mb-4">�️</div>
           <h3 className="text-xl font-semibold text-gray-900 mb-2">
             No destinations found
           </h3>
           <p className="text-gray-500">
-            Try selecting a different category to explore more destinations.
+            Try selecting a different category to explore more Indian destinations.
           </p>
         </div>
       )}
       
       {/* Load More Button */}
-      {filteredDestinations.length > 0 && (
+      {destinations.length > 0 && (
         <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-pink-500 to-red-500 text-white px-8 py-3 rounded-full font-medium hover:from-pink-600 hover:to-red-600 transition-all hover:scale-105 shadow-lg">
-            Load More Destinations
+          <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-8 py-3 rounded-full font-medium hover:from-orange-600 hover:to-red-600 transition-all hover:scale-105 shadow-lg">
+            Discover More of India
           </button>
         </div>
       )}

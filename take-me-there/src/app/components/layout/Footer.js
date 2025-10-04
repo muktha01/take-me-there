@@ -4,12 +4,12 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const destinations = [
-    'Bali, Indonesia',
-    'Tokyo, Japan', 
-    'Paris, France',
-    'Santorini, Greece',
-    'Maldives',
-    'Swiss Alps'
+    'Golden Temple, Amritsar',
+    'Kashmir Valley', 
+    'Goa Beaches',
+    'Rajasthan Palaces',
+    'Kerala Backwaters',
+    'Tirupati Temple'
   ]
 
   const company = [
@@ -22,10 +22,10 @@ export default function Footer() {
   ]
 
   const support = [
-    'Help Center',
-    'Safety',
-    'Cancellation',
-    'COVID-19',
+    'Travel Guide',
+    'Safety Tips',
+    'Planning Help',
+    'Local Information',
     'Terms of Service',
     'Privacy Policy'
   ]
@@ -38,26 +38,26 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="p-2 bg-gradient-to-r from-pink-500 to-red-500 rounded-full">
+              <div className="p-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full">
                 <Plane className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-2xl font-bold font-playfair">Take Me There</h3>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Discover breathtaking destinations around the world with our curated travel experiences. 
+              Discover breathtaking destinations across incredible India with our curated travel experiences. 
               Your journey to unforgettable adventures starts here.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-pink-500 hover:to-red-500 transition-all duration-300 hover:scale-110">
+              <a href="#" className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-500 transition-all duration-300 hover:scale-110">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-pink-500 hover:to-red-500 transition-all duration-300 hover:scale-110">
+              <a href="#" className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-500 transition-all duration-300 hover:scale-110">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-pink-500 hover:to-red-500 transition-all duration-300 hover:scale-110">
+              <a href="#" className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-500 transition-all duration-300 hover:scale-110">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-pink-500 hover:to-red-500 transition-all duration-300 hover:scale-110">
+              <a href="#" className="bg-gray-800 p-3 rounded-full hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-500 transition-all duration-300 hover:scale-110">
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
@@ -70,7 +70,7 @@ export default function Footer() {
               {destinations.map((destination, index) => (
                 <li key={index}>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors flex items-center space-x-2 group">
-                    <MapPin className="w-4 h-4 text-pink-500 group-hover:scale-110 transition-transform" />
+                    <MapPin className="w-4 h-4 text-orange-500 group-hover:scale-110 transition-transform" />
                     <span>{destination}</span>
                   </a>
                 </li>
@@ -108,12 +108,12 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-gray-400">
-                <Mail className="w-4 h-4 text-pink-500" />
-                <span className="text-sm">hello@takemethere.com</span>
+                <Mail className="w-4 h-4 text-orange-500" />
+                <span className="text-sm">info@takemethere.in</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
-                <Phone className="w-4 h-4 text-pink-500" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <Phone className="w-4 h-4 text-orange-500" />
+                <span className="text-sm">+91 (800) 123-4567</span>
               </div>
             </div>
           </div>
@@ -126,15 +126,15 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0">
               <h4 className="text-xl font-semibold mb-2">Stay Updated</h4>
-              <p className="text-gray-400">Get the latest travel deals and destination guides</p>
+              <p className="text-gray-400">Get the latest India travel guides and destination insights</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 placeholder="Your email address"
-                className="px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-white placeholder-gray-400"
+                className="px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-white placeholder-gray-400"
               />
-              <button className="bg-gradient-to-r from-pink-500 to-red-500 text-white px-6 py-3 rounded-lg font-medium hover:from-pink-600 hover:to-red-600 transition-all hover:scale-105">
+              <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-lg font-medium hover:from-orange-600 hover:to-red-600 transition-all hover:scale-105">
                 Subscribe
               </button>
             </div>

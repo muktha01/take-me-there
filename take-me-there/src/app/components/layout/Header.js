@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Search, Menu, X, Plane, Heart, Bookmark, User } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Header({ onSearchClick }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,9 +19,9 @@ export default function Header({ onSearchClick }) {
             <div className="p-2 bg-gradient-to-r from-pink-500 to-red-500 rounded-full">
               <Plane className="w-5 h-5 text-white" />
             </div>
-            <h1 className="text-xl font-bold text-gradient font-playfair">
-              Take Me There
-            </h1>
+            <Image src="/logo.svg" alt="TravelMate" width={200} height={200} className="h-8 w-auto">
+
+            </Image>
           </div>
 
           {/* Desktop Navigation */}
@@ -46,12 +47,6 @@ export default function Header({ onSearchClick }) {
   Stories
 </Link>
 
-<Link 
-  href="/guides" 
-  className="text-gray-700 hover:text-pink-600 transition-colors font-medium"
->
-  Guides
-</Link>
           </nav>
 
           {/* Desktop Actions */}
@@ -69,10 +64,10 @@ export default function Header({ onSearchClick }) {
             <button className="p-2 text-gray-700 hover:text-pink-600 hover:bg-pink-50 rounded-full transition-all">
               <Bookmark className="w-5 h-5" />
             </button>
-            <button className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-red-500 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-red-600 transition-all">
+            {/* <button className="flex items-center space-x-2 bg-gradient-to-r from-pink-500 to-red-500 text-white px-4 py-2 rounded-full hover:from-pink-600 hover:to-red-600 transition-all">
               <User className="w-4 h-4" />
               <span className="text-sm font-medium">Login</span>
-            </button>
+            </button> */}
           </div>
 
           {/* Mobile Menu Button */}

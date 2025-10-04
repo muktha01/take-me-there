@@ -10,15 +10,18 @@ import Footer from '@/app/components/layout/Footer';
 import SearchOverlay from '@/app/components/ui/SearchOverlay';
 import { destinations } from '@/lib/data/destinations';
 import MapComponent from './components/layout/map';
+import BlogPages from './components/temp/Blogpage';
 
 const categories = [
   { id: 'all', name: 'All Destinations', count: destinations.length },
-  { id: 'beach', name: 'Beach Paradise', count: 12 },
-  { id: 'mountain', name: 'Mountain Adventures', count: 8 },
-  { id: 'city', name: 'City Escapes', count: 15 },
-  { id: 'culture', name: 'Cultural Tours', count: 10 },
-  { id: 'adventure', name: 'Adventure Sports', count: 7 },
-  { id: 'luxury', name: 'Luxury Travel', count: 9 }
+  { id: 'temples', name: 'Sacred Temples', count: destinations.filter(d => d.category === 'temples').length },
+  { id: 'mountains', name: 'Hill Stations', count: destinations.filter(d => d.category === 'mountains').length },
+  { id: 'beaches', name: 'Coastal Paradise', count: destinations.filter(d => d.category === 'beaches').length },
+  { id: 'heritage', name: 'Royal Heritage', count: destinations.filter(d => d.category === 'heritage').length },
+  { id: 'cities', name: 'Metro Cities', count: destinations.filter(d => d.category === 'cities').length },
+  { id: 'backwaters', name: 'Backwaters', count: destinations.filter(d => d.category === 'backwaters').length },
+  { id: 'wildlife', name: 'Wildlife Safari', count: destinations.filter(d => d.category === 'wildlife').length },
+  { id: 'spiritual', name: 'Spiritual Retreats', count: destinations.filter(d => d.category === 'spiritual').length }
 ];
 
 export default function Home() {
@@ -61,7 +64,7 @@ export default function Home() {
       
       <Hero />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main id="destinations" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <CategoryFilter
           categories={categories}
           selectedCategory={selectedCategory}
@@ -80,7 +83,10 @@ export default function Home() {
       
       <MapComponent />
       <Newsletter />
+
+      <BlogPages />
       <Footer />
+      
       
       <SearchOverlay
         isOpen={isSearchOpen} 

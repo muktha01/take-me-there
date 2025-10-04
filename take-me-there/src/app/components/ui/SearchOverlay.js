@@ -6,19 +6,19 @@ import { Search, X, MapPin, Clock } from 'lucide-react'
 export default function SearchOverlay({ isOpen, onClose }) {
   const [searchQuery, setSearchQuery] = useState('')
   const [recentSearches] = useState([
-    'Bali, Indonesia',
-    'Tokyo, Japan', 
-    'Paris, France',
-    'Santorini, Greece'
+    'Goa, India',
+    'Kerala, India', 
+    'Rajasthan, India',
+    'Himachal Pradesh, India'
   ])
   
   const [popularDestinations] = useState([
-    { name: 'Maldives', searches: '2.3M' },
-    { name: 'Switzerland', searches: '1.8M' },
-    { name: 'Iceland', searches: '1.5M' },
-    { name: 'New Zealand', searches: '1.2M' },
-    { name: 'Norway', searches: '980K' },
-    { name: 'Thailand', searches: '856K' }
+    { name: 'Goa', searches: '2.1M', category: 'Beach' },
+    { name: 'Kerala Backwaters', searches: '1.8M', category: 'Nature' },
+    { name: 'Golden Triangle', searches: '1.6M', category: 'Cultural' },
+    { name: 'Kashmir Valley', searches: '1.3M', category: 'Adventure' },
+    { name: 'Tirupati', searches: '1.1M', category: 'Pilgrimage' },
+    { name: 'Ladakh', searches: '890K', category: 'Adventure' }
   ])
 
   useEffect(() => {
@@ -45,10 +45,10 @@ export default function SearchOverlay({ isOpen, onClose }) {
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
-                placeholder="Where do you want to go?"
+                placeholder="Where do you want to go in India?"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"
+                className="w-full pl-12 pr-4 py-4 text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent placeholder:text-gray-500 placeholder:font-normal"
                 autoFocus
               />
             </div>
@@ -76,10 +76,10 @@ export default function SearchOverlay({ isOpen, onClose }) {
                     key={index}
                     className="flex items-center space-x-3 w-full p-3 text-left hover:bg-gray-50 rounded-lg transition-colors group"
                   >
-                    <div className="p-2 bg-gray-100 rounded-full group-hover:bg-pink-100 transition-colors">
-                      <MapPin className="w-4 h-4 text-gray-600 group-hover:text-pink-600" />
+                    <div className="p-2 bg-gray-100 rounded-full group-hover:bg-orange-100 transition-colors">
+                      <MapPin className="w-4 h-4 text-gray-600 group-hover:text-orange-600" />
                     </div>
-                    <span className="text-gray-900 group-hover:text-pink-600 transition-colors">
+                    <span className="text-gray-900 group-hover:text-orange-600 transition-colors">
                       {search}
                     </span>
                   </button>
@@ -97,14 +97,14 @@ export default function SearchOverlay({ isOpen, onClose }) {
                     className="flex items-center justify-between w-full p-3 text-left hover:bg-gray-50 rounded-lg transition-colors group"
                   >
                     <div className="flex items-center space-x-3">
-                      <div className="p-2 bg-gradient-to-r from-pink-100 to-red-100 rounded-full">
-                        <MapPin className="w-4 h-4 text-pink-600" />
+                      <div className="p-2 bg-gradient-to-r from-orange-100 to-red-100 rounded-full">
+                        <MapPin className="w-4 h-4 text-orange-600" />
                       </div>
-                      <span className="text-gray-900 group-hover:text-pink-600 transition-colors font-medium">
+                      <span className="text-gray-900 group-hover:text-orange-600 transition-colors font-medium">
                         {destination.name}
                       </span>
                     </div>
-                    <span className="text-sm text-gray-500 group-hover:text-pink-500 transition-colors">
+                    <span className="text-sm text-gray-500 group-hover:text-orange-500 transition-colors">
                       {destination.searches}
                     </span>
                   </button>

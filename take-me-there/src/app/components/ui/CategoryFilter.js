@@ -1,23 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function CategoryFilter({ onFilterChange }) {
-  const [activeCategory, setActiveCategory] = useState('all')
+export default function CategoryFilter({ categories, selectedCategory, onCategoryChange }) {
+  const [activeCategory, setActiveCategory] = useState(selectedCategory || 'all')
   
-  const categories = [
-    { id: 'all', name: 'All Destinations', count: 284 },
-    { id: 'temples', name: 'Temples & Culture', count: 45 },
-    { id: 'beaches', name: 'Beach Paradise', count: 67 },
-    { id: 'mountains', name: 'Mountain Adventures', count: 39 },
-    { id: 'cities', name: 'City Breaks', count: 56 },
-    { id: 'islands', name: 'Tropical Islands', count: 42 },
-    { id: 'wildlife', name: 'Wildlife & Safari', count: 35 }
-  ]
+  // Sync with parent component's selectedCategory
+  useEffect(() => {
+    setActiveCategory(selectedCategory || 'all')
+  }, [selectedCategory])
+  
+  // Use categories passed from parent component
 
   const handleCategoryClick = (categoryId) => {
     setActiveCategory(categoryId)
-    onFilterChange(categoryId)
+    onCategoryChange(categoryId)
   }
 
   return (
@@ -25,7 +22,7 @@ export default function CategoryFilter({ onFilterChange }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-2xl font-bold text-gray-900 font-playfair">
-            Discover Amazing Places
+            Explore Incredible India
           </h2>
           <div className="text-sm text-gray-500">
             {categories.find(cat => cat.id === activeCategory)?.count} destinations

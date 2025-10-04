@@ -9,19 +9,19 @@ export default function Hero({ onSearchClick }) {
   
   const heroImages = [
     {
-      url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop',
-      title: 'Discover Amazing Places',
-      subtitle: 'Let\'s discover the world together'
+      url: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1920&h=1080&fit=crop',
+      title: 'Discover Incredible India',
+      subtitle: 'From Kashmir to Kanyakumari - Explore our diverse heritage'
     },
     {
-      url: 'https://plus.unsplash.com/premium_photo-1661962542692-4fe7a4ad6b54?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      title: 'Create Unforgettable Memories',
-      subtitle: 'Adventures that last a lifetime'
+      url: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1920&h=1080&fit=crop&q=80',
+      title: 'Sacred Spiritual Journeys',
+      subtitle: 'Experience divine bliss at India\'s holiest temples'
     },
     {
-      url: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1920&h=1080&fit=crop',
-      title: 'Explore Hidden Gems',
-      subtitle: 'Journey to the extraordinary'
+      url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1920&h=1080&fit=crop',
+      title: 'Majestic Mountains & Beaches',
+      subtitle: 'From Himalayan peaks to pristine coastlines'
     }
   ]
 
@@ -54,9 +54,11 @@ export default function Hero({ onSearchClick }) {
            <Image
               src={image.url}
               alt={image.title}
-              width={800}       
-              height={600}     
+              width={1920}       
+              height={1080}     
               className="w-full h-full object-cover"
+              priority={index === 0}
+              unoptimized
             />
             <div className="absolute inset-0 bg-black/40" />
           </div>
@@ -102,9 +104,9 @@ export default function Hero({ onSearchClick }) {
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-8 py-4 flex items-center justify-between transition-all duration-300 hover:bg-white/20 hover:scale-105">
               <div className="flex items-center space-x-4">
                 <Search className="w-6 h-6 text-white/80" />
-                <span className="text-white/80 text-lg">Where do you want to go?</span>
+                <span className="text-white/80 text-lg">Which part of India calls to you?</span>
               </div>
-              <div className="bg-gradient-to-r from-rose-500 to-red-500 p-3 rounded-full group-hover:shadow-lg transition-all duration-300">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 p-3 rounded-full group-hover:shadow-lg transition-all duration-300">
                 <Search className="w-5 h-5 text-white" />
               </div>
             </div>
@@ -115,14 +117,14 @@ export default function Hero({ onSearchClick }) {
         <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
           <button 
             onClick={scrollToDestinations}
-            className="bg-gradient-to-r from-rose-500 to-red-500 hover:from-rose-600 hover:to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           >
-            Explore Destinations
+            Explore Travel Guides
           </button>
           
           <button className="border-2 border-white/50 hover:border-white text-white px-8 py-4 rounded-full font-semibold text-lg backdrop-blur-sm hover:bg-white/10 transform hover:scale-105 transition-all duration-300 flex items-center space-x-2">
             <Play className="w-5 h-5" />
-            <span>Watch Video</span>
+            <span>Watch Stories</span>
           </button>
         </div>
       </div>
@@ -159,18 +161,18 @@ export default function Hero({ onSearchClick }) {
       <div className="absolute left-8 top-1/2 transform -translate-y-1/2 hidden lg:block z-20">
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 space-y-4 border border-white/20">
           <div className="text-center">
-            <div className="text-3xl font-bold text-white">500+</div>
-            <div className="text-white/80 text-sm">Destinations</div>
+            <div className="text-3xl font-bold text-white">28+</div>
+            <div className="text-white/80 text-sm">States & UTs</div>
           </div>
           <div className="w-12 h-px bg-white/30 mx-auto" />
           <div className="text-center">
-            <div className="text-3xl font-bold text-white">50K+</div>
-            <div className="text-white/80 text-sm">Happy Travelers</div>
+            <div className="text-3xl font-bold text-white">100K+</div>
+            <div className="text-white/80 text-sm">Indian Explorers</div>
           </div>
           <div className="w-12 h-px bg-white/30 mx-auto" />
           <div className="text-center">
-            <div className="text-3xl font-bold text-white">4.9★</div>
-            <div className="text-white/80 text-sm">Average Rating</div>
+            <div className="text-3xl font-bold text-white">4.8★</div>
+            <div className="text-white/80 text-sm">Travel Experience</div>
           </div>
         </div>
       </div>
@@ -205,8 +207,8 @@ export default function Hero({ onSearchClick }) {
 />
             </div>
             <div>
-              <div className="text-white text-sm font-medium">2.5K travelers</div>
-              <div className="text-white/70 text-xs">joined this week</div>
+              <div className="text-white text-sm font-medium">3.2K Indians</div>
+              <div className="text-white/70 text-xs">explored this week</div>
             </div>
           </div>
         </div>
