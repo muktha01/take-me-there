@@ -8,6 +8,7 @@ import MasonryGrid from '@/app/components/layout/MansonryGrid';
 import Newsletter from '@/app/components/sections/NewsletterSection';
 import Footer from '@/app/components/layout/Footer';
 import SearchOverlay from '@/app/components/ui/SearchOverlay';
+import { BannerAd, InContentAd, MobileAd } from '@/app/components/ads/AdSenseAd';
 import { destinations } from '@/lib/data/destinations';
 import MapComponent from './components/layout/map';
 import BlogPages from './components/temp/Blogpage';
@@ -64,6 +65,11 @@ export default function Home() {
       
       <Hero />
       
+      {/* Banner Advertisement */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <BannerAd className="text-center" />
+      </div>
+      
       <main id="destinations" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <CategoryFilter
           categories={categories}
@@ -80,11 +86,23 @@ export default function Home() {
         />
       </main>
 
+      {/* In-Content Advertisement */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <InContentAd className="text-center" />
+        <MobileAd className="text-center" />
+      </div>
+
       
       <MapComponent />
       <Newsletter />
 
       <BlogPages />
+      
+      {/* Mobile Advertisement */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <MobileAd className="text-center" />
+      </div>
+      
       <Footer />
       
       
